@@ -1,0 +1,56 @@
+[
+  {
+    "Name": "Officer",
+    "Scene": 1,
+    "Key": "First",
+    "Dialogue": "Hello there detective!|I hope your train journey was good."
+  },
+  {
+    "Name": "Officer",
+    "Scene": 1,
+    "Key": "PuzzleComplete",
+    "Dialogue": "Thank you! Now we can go find the bakery"
+  },
+  {
+    "Name": "Officer",
+    "Scene": 1,
+    "Key": "RepeatBeforePuzzle",
+    "Dialogue": "Want to try again?"
+  },
+  {
+    "Name": "Officer",
+    "Scene": 1,
+    "Key": "RepeatAfterPuzzle",
+    "Dialogue": "Let's go to the bakery."
+  },
+  {
+    "Name": "Tom",
+    "Scene": 1,
+    "Key": "First",
+    "Dialogue": "Hi I'm Tom!|Did you know they are currently building a new rail line? This town keeps growing."
+  },
+  {
+    "Name": "Tom",
+    "Scene": 1,
+    "Key": "Repeat",
+    "Dialogue": "I'm a photographer and I love trains."
+  },
+  {
+    "Name": "Officer",
+    "Scene": 2,
+    "Key": "First",
+    "Dialogue": "Welcome to the town centre"
+  },
+  {
+    "Name": "Officer",
+    "Scene": 2,
+    "Key": "Repeat",
+    "Dialogue": "The bakery should be to the right"
+  },
+  {
+    "Name": "Officer",
+    "Scene": 2,
+    "Key": "WrongArea",
+    "Dialogue": "Let's go straight to the bakery first"
+  }
+]
