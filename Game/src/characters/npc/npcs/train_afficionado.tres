@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://qs2pl54q1a04"]
+
+[ext_resource type="Script" path="res://src/characters/npc/npc_resource.gd" id="1_t3ihd"]
+[ext_resource type="Texture2D" uid="uid://37gbffjmpbhm" path="res://assets/characters/template.png" id="2_sv3j8"]
+
+[resource]
+script = ExtResource("1_t3ihd")
+npc_name = "Train Boy"
+sprite = ExtResource("2_sv3j8")
+voice_pitch = 1.0

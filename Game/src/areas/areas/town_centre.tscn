@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://baxol713qhrsy"]
+
+[ext_resource type="Script" path="res://src/areas/area.gd" id="1_4qiik"]
+[ext_resource type="Texture2D" uid="uid://dvgnmle78cde1" path="res://assets/environment/temp2.jpeg" id="2_0b760"]
+[ext_resource type="PackedScene" uid="uid://bqhtn570j43xb" path="res://src/areas/player_spawn.tscn" id="3_kul5c"]
+[ext_resource type="PackedScene" uid="uid://bcn5ilqbutdyp" path="res://src/areas/area_transition.tscn" id="4_60fjm"]
+
+[node name="TownCentre" type="Node2D"]
+script = ExtResource("1_4qiik")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1282.0
+offset_bottom = 728.0
+texture = ExtResource("2_0b760")
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("3_kul5c")]
+position = Vector2(729, 557)
+
+[node name="AreaTransition" parent="." instance=ExtResource("4_60fjm")]
+position = Vector2(1282, 671)
+area = "res://src/areas/areas/outside_station.tscn"
+side = 1
+size = 3
