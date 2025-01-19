@@ -1,0 +1,26 @@
+{
+    "Officer": {
+        "Scene": {
+            "1": {
+                "First": "Ah there you are detective! I trust your journey was comfortable?|Thank you for coming to help us with this case. The baker’s disappearance has rattled everyone in town, but no one’s seen or heard from him in days.|I was going to show you the fastest way to the bakery... but, uh, there’s a slight problem.|I got distracted earlier and... well, I accidentally tore the map into pieces. I was hoping you could put it back together.|Not my finest moment... but I heard you're good at solving puzzles right?",
+                "PuzzleComplete": "Thank you! Now we can finally head to the bakery.|Lead us the way, I will be right behind you.\"",
+                "PuzzleGiveup": "Don't worry detective, we can try again when you are ready.",
+                "PuzzleRepeat": "Hi again! Here is the map.",
+                "Final": "Lead us the way detective! I will be right behind you."
+            },
+            "2": {
+                "First": "Welcome to the town centre.|Let's keep going towards the bakery.",
+                "Final": "The bakery should be to the right",
+                "WrongArea": "Let's go straight to the bakery first"
+            }
+        }
+    },
+    "Tom": {
+        "Scene": {
+            "1": {
+                "First": "*Snap* *Snap*Ah! Isn't she a beauty?|The sleek lines, the glistening finish—this model’s an absolute marvel of engineering! A perfect way to arrive in town, don’t you think?|Sorry, I got ahead of myself, I'm Tom Whistler a rail enthusiast. Been following the expansion here in town.|New tracks, new routes... what an exciting time!",
+                "Final": "I love trains."
+            }
+        }
+    }
+}

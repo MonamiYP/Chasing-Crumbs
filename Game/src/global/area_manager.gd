@@ -3,8 +3,11 @@ extends Node
 signal area_load_started
 signal area_loaded
 
+var areainfo_json : String = "res://res/area_info.json"
+
 var target_transition : String
 var position_offset : Vector2
+var bg_size : Vector2
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -20,6 +23,7 @@ func load_new_area(area_path : String, _target_transition : String, _position_of
 	area_load_started.emit()
 	await get_tree().process_frame
 	get_tree().change_scene_to_file(area_path)
+	load_npcs()
 	
 	await SceneTransition.fade_in()
 
@@ -27,3 +31,6 @@ func load_new_area(area_path : String, _target_transition : String, _position_of
 	await get_tree().process_frame
 	
 	area_loaded.emit()
+
+func load_npcs() -> void:
+	pass

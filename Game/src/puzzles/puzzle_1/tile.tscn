@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://co1g7u4oe74jt"]
+
+[ext_resource type="Texture2D" uid="uid://bjp1jv3el3tvp" path="res://assets/puzzles/Puzzle1_map.jpeg" id="1_0hww6"]
+[ext_resource type="Script" path="res://src/puzzles/puzzle_1/tile.gd" id="1_tyaha"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kth3h"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0445564, 0.0146249, 0.00641568, 1)
+border_blend = true
+
+[node name="Tile" type="TextureButton"]
+script = ExtResource("1_tyaha")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0hww6")
+centered = false
+hframes = 4
+vframes = 4
+
+[node name="Number" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 156.0
+offset_bottom = 156.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Number"]
+layout_mode = 1
+offset_right = 156.0
+offset_bottom = 156.0
+mouse_filter = 2
+color = Color(0.0923971, 0.0923971, 0.0923971, 0.517647)
+
+[node name="Label" type="Label" parent="Number"]
+layout_mode = 1
+offset_right = 157.0
+offset_bottom = 157.0
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+offset_right = 157.0
+offset_bottom = 157.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kth3h")
+
+[connection signal="pressed" from="." to="." method="_on_tile_pressed"]

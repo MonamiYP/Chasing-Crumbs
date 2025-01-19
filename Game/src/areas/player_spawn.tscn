@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqhtn570j43xb"]
 
 [ext_resource type="Script" path="res://src/areas/player_spawn.gd" id="1_iomon"]
-[ext_resource type="Texture2D" uid="uid://dwor634t528ro" path="res://assets/characters/dragon_red.png" id="1_rnkon"]
+[ext_resource type="Texture2D" uid="uid://dyhhs07r4wfby" path="res://assets/characters/_a.png" id="2_qhuba"]
 
 [node name="PlayerSpawn" type="Node2D"]
 script = ExtResource("1_iomon")
@@ -9,4 +9,4 @@ script = ExtResource("1_iomon")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.966029, 0.246786, 0.999783, 0.554)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_rnkon")
+texture = ExtResource("2_qhuba")

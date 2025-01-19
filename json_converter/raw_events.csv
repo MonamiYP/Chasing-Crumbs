@@ -1,0 +1,6 @@
+Scene,NextScene,Character,CurrentKey,NextKey
+1,2,Officer,First,Puzzle1
+1,2,Officer,PuzzleGiveup,Puzzle
+1,2,Officer,PuzzleComplete,Final
+1,2,Tom,First,Final
+2,3,Officer,First,Final

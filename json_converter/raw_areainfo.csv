@@ -1,0 +1,4 @@
+Scene,Area,InactiveTransition,TransitionKey
+1,TrainStation,OutsideTrainStation,Puzzle1
+2,OutsideTrainStation,TrainStation,
+3,TownCentre,,

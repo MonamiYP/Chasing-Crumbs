@@ -1,0 +1,21 @@
+{
+    "1": {
+        "Character": {
+            "Officer": {
+                "First": "Puzzle1",
+                "PuzzleGiveup": "Puzzle",
+                "PuzzleComplete": "Final"
+            },
+            "Tom": {
+                "First": "Final"
+            }
+        }
+    },
+    "2": {
+        "Character": {
+            "Officer": {
+                "First": "Final"
+            }
+        }
+    }
+}

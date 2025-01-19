@@ -55,7 +55,7 @@ _data = {
 
 [node name="DialogueSystem" type="CanvasLayer"]
 script = ExtResource("1_5acew")
-dialogue_file = "res://src/dialogue/dialogue.json"
+dialogue_json = "res://res/dialogue.json"
 
 [node name="DialogueUI" type="Control" parent="."]
 layout_mode = 3
@@ -95,13 +95,14 @@ text = "Name"
 
 [node name="Text" type="Label" parent="DialogueUI/NinePatchRect"]
 layout_mode = 1
-offset_left = 53.0
-offset_top = 59.0
-offset_right = 118.0
-offset_bottom = 84.0
+offset_left = 36.0
+offset_top = 54.0
+offset_right = 1185.0
+offset_bottom = 135.0
 theme_override_fonts/font = ExtResource("3_mlo0m")
 theme_override_font_sizes/font_size = 24
 text = "Text"
+autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="DialogueUI"]
 one_shot = true

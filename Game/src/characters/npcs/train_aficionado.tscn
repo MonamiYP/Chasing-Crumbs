@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4drfuxtt10yg"]
+
+[ext_resource type="PackedScene" uid="uid://bxok8jdc4bjpv" path="res://src/characters/npcs/default/npc.tscn" id="1_uimtn"]
+[ext_resource type="Resource" uid="uid://qs2pl54q1a04" path="res://src/characters/npcs/train_afficionado.tres" id="2_trgdu"]
+
+[node name="TrainAficionado" instance=ExtResource("1_uimtn")]
+npc_resource = ExtResource("2_trgdu")
+
+[node name="DialogueInteraction" parent="." index="2"]
+position = Vector2(5, 0)

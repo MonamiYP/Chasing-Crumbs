@@ -2,7 +2,7 @@
 extends Area2D
 
 @export_file("*.tscn") var area : String
-@export var target_transition_area : String = "AreaTransition"
+var target_transition_area : String
 @export_category("Collision Area Settings")
 @export var side : SIDE = SIDE.LEFT :
 	set(_v) :
@@ -21,7 +21,8 @@ func _ready() -> void:
 	update_area()
 	if Engine.is_editor_hint():
 		return
-		
+	
+	target_transition_area = get_parent().name
 	monitoring = false
 	place_player()
 	await AreaManager.area_loaded
@@ -31,6 +32,7 @@ func _ready() -> void:
 
 func player_entered(_player : Node2D) -> void:
 	if is_active:
+		GameManager.update_scene()
 		AreaManager.load_new_area(area, target_transition_area, get_offset())
 
 func place_player() -> void:
@@ -44,14 +46,14 @@ func get_offset() -> Vector2:
 	
 	if side == SIDE.LEFT || side == SIDE.RIGHT:
 		offset.y = player_pos.y - global_position.y
-		offset.x = 64
+		offset.x = 128
 		if side == SIDE.LEFT:
 			offset.x *= -1
 	if side == SIDE.TOP || side == SIDE.BOTTOM:
 		offset.x = player_pos.x - global_position.x
-		offset.y = 64
+		offset.y = 100
 		if side == SIDE.TOP:
-			offset.y *= -1
+			offset.y = -120
 	
 	return offset
 

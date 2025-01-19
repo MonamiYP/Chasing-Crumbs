@@ -1,78 +1,72 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl6r6hyy1pl41"]
+[gd_scene load_steps=7 format=3 uid="uid://dl6r6hyy1pl41"]
 
 [ext_resource type="Script" path="res://src/areas/area.gd" id="1_j6yga"]
-[ext_resource type="Texture2D" uid="uid://b8uuk3suqy0sb" path="res://assets/environment/temp1.jpeg" id="2_qj02l"]
-[ext_resource type="PackedScene" uid="uid://bxok8jdc4bjpv" path="res://src/characters/npc/npc.tscn" id="3_ms1pv"]
-[ext_resource type="Resource" uid="uid://2rkw2247h0a7" path="res://src/characters/npc/npcs/officer.tres" id="4_eceof"]
-[ext_resource type="PackedScene" uid="uid://cdlmudotsgrm4" path="res://src/dialogue/dialogue_interaction.tscn" id="5_8s7xj"]
-[ext_resource type="Script" path="res://src/dialogue/dialogue_item.gd" id="6_mnrgy"]
-[ext_resource type="Resource" uid="uid://qs2pl54q1a04" path="res://src/characters/npc/npcs/train_afficionado.tres" id="7_y5422"]
+[ext_resource type="Texture2D" uid="uid://b8uypsnm0hx5n" path="res://assets/environment/sketch.jpeg" id="2_ugqbr"]
+[ext_resource type="PackedScene" uid="uid://57ofpchot4c4" path="res://src/characters/npcs/officer.tscn" id="3_hak2n"]
+[ext_resource type="PackedScene" uid="uid://b4drfuxtt10yg" path="res://src/characters/npcs/train_aficionado.tscn" id="6_63xtk"]
 [ext_resource type="PackedScene" uid="uid://bqhtn570j43xb" path="res://src/areas/player_spawn.tscn" id="8_1d2r0"]
 [ext_resource type="PackedScene" uid="uid://bcn5ilqbutdyp" path="res://src/areas/area_transition.tscn" id="9_d2s30"]
 
 [node name="TrainStation" type="Node2D"]
 script = ExtResource("1_j6yga")
 
-[node name="Scene" type="TextureRect" parent="."]
-offset_right = 1280.0
-offset_bottom = 720.0
-texture = ExtResource("2_qj02l")
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 2463.0
+offset_bottom = 1884.0
+texture = ExtResource("2_ugqbr")
 
 [node name="Terrain" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain"]
-polygon = PackedVector2Array(639, 572, 725, 513, 1325, 509, 1325, 639, 705, 635, 705, 591, 645, 626, 642, 764, 523, 762, 523, 567, 637, 571, 667, -21, -77, -19, -42, 742, 1360, 822, 1332, -13, 689, -20)
+position = Vector2(666, 476)
+polygon = PackedVector2Array(-344, 518, -68, 510, -65, 390, 82, 390, 82, 513, 1452, 532, 1449, 738, -347, 714, -348, 537, -746, 546, -743, 1472, 1907, 1472, 1904, -540, -769, -525, -739, 517)
 
-[node name="NPC" parent="." instance=ExtResource("3_ms1pv")]
-position = Vector2(739, 499)
-npc_resource = ExtResource("4_eceof")
+[node name="Pole5" type="CollisionPolygon2D" parent="Terrain"]
+position = Vector2(1159.65, 419.498)
+scale = Vector2(0.9625, 0.625001)
+polygon = PackedVector2Array(461, 1039, 509, 1038, 508, 1082, 486.025, 1082, 459, 1082)
 
-[node name="DialogueInteraction" parent="NPC" instance=ExtResource("5_8s7xj")]
+[node name="Pole4" type="CollisionPolygon2D" parent="Terrain"]
+position = Vector2(-3, 386)
+scale = Vector2(1, 0.651528)
+polygon = PackedVector2Array(461, 1039, 509, 1038, 508, 1082, 459, 1082)
 
-[node name="DialogueItem" type="Node" parent="NPC/DialogueInteraction"]
-script = ExtResource("6_mnrgy")
-npc_info = ExtResource("4_eceof")
-text = "
-Hi!"
+[node name="Pole3" type="CollisionPolygon2D" parent="Terrain"]
+position = Vector2(1511, 364.111)
+scale = Vector2(1, 0.679049)
+polygon = PackedVector2Array(461, 1039, 509, 1038, 508, 1082, 459, 1082)
 
-[node name="DialogueItem2" type="Node" parent="NPC/DialogueInteraction"]
-script = ExtResource("6_mnrgy")
-npc_info = ExtResource("4_eceof")
-text = "
-Testing the dialogue system... Also, I want to check the stops like: this, this and this."
+[node name="Pole2" type="CollisionPolygon2D" parent="Terrain"]
+position = Vector2(755, 304)
+scale = Vector2(1, 0.731222)
+polygon = PackedVector2Array(461, 1039, 509, 1038, 508, 1082, 459, 1082)
 
-[node name="DialogueItem3" type="Node" parent="NPC/DialogueInteraction"]
-script = ExtResource("6_mnrgy")
-npc_info = ExtResource("4_eceof")
-text = "
-Bye"
+[node name="Pole" type="CollisionPolygon2D" parent="Terrain"]
+position = Vector2(370, 270.891)
+scale = Vector2(1, 0.760255)
+polygon = PackedVector2Array(461, 1039, 509, 1038, 508, 1082, 459, 1082)
 
-[node name="NPC2" parent="." instance=ExtResource("3_ms1pv")]
-position = Vector2(1197, 557)
-npc_resource = ExtResource("7_y5422")
-
-[node name="DialogueInteraction" parent="NPC2" instance=ExtResource("5_8s7xj")]
-
-[node name="DialogueItem" type="Node" parent="NPC2/DialogueInteraction"]
-script = ExtResource("6_mnrgy")
-npc_info = ExtResource("7_y5422")
-text = "I love trains"
+[node name="Officer" parent="." instance=ExtResource("3_hak2n")]
+position = Vector2(1232, 958)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("8_1d2r0")]
-position = Vector2(1052, 496)
+position = Vector2(1527, 949)
 
-[node name="AreaTransition" parent="." instance=ExtResource("9_d2s30")]
-position = Vector2(582, 721)
+[node name="OutsideTrainStation" parent="." instance=ExtResource("9_d2s30")]
+position = Vector2(673, 914)
 area = "res://src/areas/areas/outside_station.tscn"
-target_transition_area = "AreaTransition2"
-side = 3
-size = 3
+side = 2
+size = 4
+is_active = true
 
-[node name="StartArea" parent="." instance=ExtResource("9_d2s30")]
-position = Vector2(1040, 512)
+[node name="Cutscene" parent="." instance=ExtResource("9_d2s30")]
+position = Vector2(1515, 965)
 area = "res://src/areas/areas/outside_station.tscn"
-target_transition_area = "AreaTransition2"
 side = 3
 size = 3
 is_active = false
+
+[node name="TrainAficionado" parent="." instance=ExtResource("6_63xtk")]
+position = Vector2(1690, 960)

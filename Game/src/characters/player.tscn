@@ -1,24 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://hhvj7bjlydmn"]
+[gd_scene load_steps=6 format=3 uid="uid://hhvj7bjlydmn"]
 
 [ext_resource type="Script" path="res://src/characters/player.gd" id="1_8qh6l"]
-[ext_resource type="Texture2D" uid="uid://dwor634t528ro" path="res://assets/characters/dragon_red.png" id="1_t2sk7"]
+[ext_resource type="Texture2D" uid="uid://b2cl4m3p05xof" path="res://assets/characters/detective.png" id="2_ttubp"]
+[ext_resource type="Script" path="res://src/characters/player_camera.gd" id="3_lpj15"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa55m"]
-size = Vector2(39.5, 22.5)
+size = Vector2(57.5, 46)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bg6rm"]
-radius = 47.0106
+radius = 55.0818
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_8qh6l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_t2sk7")
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("2_ttubp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7.75, 48.25)
+position = Vector2(6, 82)
 shape = SubResource("RectangleShape2D_xa55m")
 
 [node name="Interactions" type="Node2D" parent="."]
@@ -31,3 +32,8 @@ collision_mask = 0
 position = Vector2(-2, 2)
 shape = SubResource("CircleShape2D_bg6rm")
 debug_color = Color(0.56108, 0.559602, 0, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("3_lpj15")

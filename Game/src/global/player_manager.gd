@@ -8,6 +8,9 @@ var player_spawned : bool = false
 signal interact_pressed
 
 func _ready() -> void:
+	pass
+
+func player_spawn() -> void:
 	add_player_instance()
 	await get_tree().create_timer(0.2).timeout
 	player_spawned = true

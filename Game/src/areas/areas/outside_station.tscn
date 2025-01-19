@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c46ku7o1mmf6x"]
+[gd_scene load_steps=6 format=3 uid="uid://c46ku7o1mmf6x"]
 
 [ext_resource type="Script" path="res://src/areas/area.gd" id="1_tbl7s"]
 [ext_resource type="Texture2D" uid="uid://4v8oeyb6dhwh" path="res://assets/environment/temp3.jpeg" id="2_ganwt"]
 [ext_resource type="PackedScene" uid="uid://bqhtn570j43xb" path="res://src/areas/player_spawn.tscn" id="3_wtld0"]
 [ext_resource type="PackedScene" uid="uid://bcn5ilqbutdyp" path="res://src/areas/area_transition.tscn" id="4_m6kxk"]
+[ext_resource type="PackedScene" uid="uid://57ofpchot4c4" path="res://src/characters/npcs/officer.tscn" id="5_s8vdo"]
 
-[node name="TrainStation" type="Node2D"]
+[node name="OutsideTrainStation" type="Node2D"]
 script = ExtResource("1_tbl7s")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_ganwt")
@@ -16,13 +17,18 @@ texture = ExtResource("2_ganwt")
 [node name="PlayerSpawn" parent="." instance=ExtResource("3_wtld0")]
 position = Vector2(799, 505)
 
-[node name="AreaTransition" parent="." instance=ExtResource("4_m6kxk")]
+[node name="TownCentre" parent="." instance=ExtResource("4_m6kxk")]
 position = Vector2(16, 426)
 area = "res://src/areas/areas/town_centre.tscn"
 size = 5
+is_active = true
 
-[node name="AreaTransition2" parent="." instance=ExtResource("4_m6kxk")]
+[node name="TrainStation" parent="." instance=ExtResource("4_m6kxk")]
 position = Vector2(476, 0)
 area = "res://src/areas/areas/train_station.tscn"
 side = 2
 size = 4
+is_active = true
+
+[node name="Officer" parent="." instance=ExtResource("5_s8vdo")]
+position = Vector2(642, 113)

@@ -1,6 +1,6 @@
 class_name DialogueSystem extends CanvasLayer
 
-@export_file("*.json") var dialogue_file : String
+@export_file("*.json") var dialogue_json : String
 
 @onready var dialog_ui : Control = $DialogueUI
 @onready var content : Label = $DialogueUI/NinePatchRect/Text
@@ -10,15 +10,14 @@ class_name DialogueSystem extends CanvasLayer
 @onready var timer: Timer = $DialogueUI/Timer
 @onready var audio_stream_player: AudioStreamPlayer = $DialogueUI/AudioStreamPlayer
 
-
-var dialogue : Array
+var dialogue_file : Dictionary
 var is_active : bool = false
 
 var dialogue_items : Array[DialogueItem]
 var dialogue_item_index : int = 0
 
 var plain_text : String
-var text_speed : float = 0.01
+var text_speed : float = 0.015
 var text_length : int = 0
 var text_in_progress : bool = false
 var pitch_base : float = 1.0
@@ -26,11 +25,9 @@ var pitch_base : float = 1.0
 signal finished
 
 func _ready() -> void:
-	dialogue = load_dialogue(dialogue_file)
+	dialogue_file = load_dialogue(dialogue_json)
 	timer.timeout.connect(on_timer_timeout)
-	#$NinePatchRect/Name.text = dialogue[0]['name']
-	#$NinePatchRect/Text.text = dialogue[1]['text']
-	hide_dialogue() 
+	hide_dialogue()
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
@@ -41,17 +38,23 @@ func _unhandled_input(event: InputEvent) -> void:
 			content.visible_characters = text_length
 			timer.stop()
 			show_dialogue_next_indicator(true)
-			return 
+			return
 		dialogue_item_index += 1
 		if dialogue_item_index < dialogue_items.size():
 			next_dialogue()
 		else:
 			hide_dialogue()
 
-func load_dialogue(file_path: String) -> Array:
+func load_dialogue(file_path: String) -> Dictionary:
 	var file : FileAccess = FileAccess.open(file_path, FileAccess.READ)
-	var data : Array = JSON.parse_string(file.get_as_text())
+	var data : Dictionary = JSON.parse_string(file.get_as_text())
 	return data
+
+func get_dialogue(npc_name : String, scene : String, key : String) -> String:
+	var _dialogue : String = ""
+	if scene in dialogue_file[npc_name]['Scene']:
+		_dialogue = dialogue_file[npc_name]['Scene'][scene][key]
+	return _dialogue
 
 func show_dialogue_ui(items : Array[DialogueItem]) -> void:
 	is_active = true

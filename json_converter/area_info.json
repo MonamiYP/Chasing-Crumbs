@@ -1,0 +1,23 @@
+{
+    "1": {
+        "Area": {
+            "TrainStation": {
+                "OutsideTrainStation": "Puzzle1"
+            }
+        }
+    },
+    "2": {
+        "Area": {
+            "OutsideTrainStation": {
+                "TrainStation": ""
+            }
+        }
+    },
+    "3": {
+        "Area": {
+            "TownCentre": {
+                "": ""
+            }
+        }
+    }
+}

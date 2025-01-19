@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxok8jdc4bjpv"]
+
+[ext_resource type="Script" path="res://src/characters/npcs/default/npc.gd" id="1_4phr8"]
+[ext_resource type="Texture2D" uid="uid://dyhhs07r4wfby" path="res://assets/characters/_a.png" id="2_r3qr6"]
+[ext_resource type="PackedScene" uid="uid://cdlmudotsgrm4" path="res://src/dialogue/dialogue_interaction.tscn" id="3_x8f72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6hsr"]
+size = Vector2(46, 54.5)
+
+[node name="NPC" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_4phr8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_r3qr6")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 37.25)
+shape = SubResource("RectangleShape2D_l6hsr")
+
+[node name="DialogueInteraction" parent="." instance=ExtResource("3_x8f72")]

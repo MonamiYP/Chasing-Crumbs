@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://d4gqm1qpyhors" path="res://assets/fonts/ConnectionII.otf" id="2_6ryoe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mv4hy"]
-radius = 45.0
+radius = 59.0
 
 [sub_resource type="Animation" id="Animation_34wn1"]
 length = 0.001
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-8, -73)]
+"values": [Vector2(-16, -140)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -45,7 +45,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-8, -73)]
+"values": [Vector2(-16, -140)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -72,7 +72,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-8, -78), Vector2(-8, -73)]
+"values": [Vector2(-16, -145), Vector2(-16, -140)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -99,7 +99,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-8, -73), Vector2(-8, -78)]
+"values": [Vector2(-16, -140), Vector2(-16, -145)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -147,10 +147,11 @@ libraries = {
 autoplay = "default"
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = -8.0
-offset_top = -73.0
-offset_right = 7.0
-offset_bottom = -57.0
+offset_left = -16.0
+offset_top = -140.0
+offset_right = -1.0
+offset_bottom = -124.0
+scale = Vector2(2, 2)
 theme_override_styles/panel = SubResource("StyleBoxFlat_mq3ud")
 
 [node name="Label" type="Label" parent="Panel"]
@@ -172,5 +173,3 @@ theme_override_font_sizes/font_size = 9
 text = "!"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="player_interacted" from="." to="." method="_on_player_interacted"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://qs2pl54q1a04"]
+
+[ext_resource type="Script" path="res://src/characters/npcs/default/npc_resource.gd" id="1_t3ihd"]
+[ext_resource type="Texture2D" uid="uid://b3iit16feiika" path="res://assets/characters/tom.png" id="2_2g2v5"]
+
+[resource]
+script = ExtResource("1_t3ihd")
+npc_name = "Tom"
+sprite = ExtResource("2_2g2v5")
+voice_pitch = 1.0
+puzzles = Array[int]([])

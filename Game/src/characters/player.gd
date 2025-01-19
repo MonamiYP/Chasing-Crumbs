@@ -3,6 +3,8 @@ class_name Player extends CharacterBody2D
 var speed : int = 150
 var acceleration : int = 50
 
+@onready var camera : Camera2D = $Camera2D
+
 func _ready() -> void:
 	PlayerManager.player = self
 

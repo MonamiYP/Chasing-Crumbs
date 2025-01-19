@@ -8,7 +8,7 @@
 [node name="TownCentre" type="Node2D"]
 script = ExtResource("1_4qiik")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 1282.0
 offset_bottom = 728.0
 texture = ExtResource("2_0b760")
@@ -16,8 +16,9 @@ texture = ExtResource("2_0b760")
 [node name="PlayerSpawn" parent="." instance=ExtResource("3_kul5c")]
 position = Vector2(729, 557)
 
-[node name="AreaTransition" parent="." instance=ExtResource("4_60fjm")]
+[node name="OutsideTrainStation" parent="." instance=ExtResource("4_60fjm")]
 position = Vector2(1282, 671)
 area = "res://src/areas/areas/outside_station.tscn"
 side = 1
 size = 3
+is_active = true

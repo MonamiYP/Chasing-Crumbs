@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkcud426nnt2x"]
+
+[ext_resource type="Script" path="res://src/puzzles/puzzle_board.gd" id="1_se4dr"]
+
+[node name="PuzzleBoard" type="Control"]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 659.0
+offset_bottom = 662.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_se4dr")
+
+[node name="Background" type="AspectRatioContainer" parent="."]
+layout_mode = 0
+offset_right = 668.0
+offset_bottom = 664.0
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 2
+color = Color(0.571784, 0.479205, 0.386167, 1)
